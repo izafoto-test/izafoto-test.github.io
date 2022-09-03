@@ -1,0 +1,270 @@
+@charset "utf-8";
+/* Tutaj osadzamy fonty z Google -samodzielnie w domu */
+
+/* GLOBALNE */
+html{scroll-behavior: smooth /*plynne skrolowanie ale nie dziala na macu */}
+body{
+	background-color: #FFEFE5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+section{
+	min-height: 80vh; /* vh = % wysokosc okna przegladarki */
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+	max-width: 1200px;
+}
+
+section .title{
+	padding-top: 5%;
+}
+
+.content{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.content #left{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	max-width: 50%;
+}
+
+.content #right{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	max-width: 50%;
+}
+
+
+
+section .content a{
+	align-self: center;
+	vertical-align: middle;
+	font-size: 30;
+	width: 80%;
+	text-justify: inter-word;
+}
+
+section .content .flower{
+	width: 30%;
+	padding: 5%;
+}
+
+/*NAWIGACJA SMARTFONOWA BURGER*/
+.burger{
+	font-size: 3em; /*pieciokrotnosc szesnastu*/
+	position: fixed;
+	right: 0.5em;
+	top: 0.5em; /*odległośc ikonki burgera od prawego górnego rogu i od góry */
+	display: none; /*zeby nie byl w nawigacji desktopowej*/
+	cursor: pointer;
+}
+.nakladka{
+	background-color: rgba(21,18,22,0.97);
+	position: fixed;
+	height: 100%;
+	width: 0;
+	transition: 1s;
+	right: 0;
+	overflow: hidden; /*nic nie wystaje poza boki*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+}
+.nakladka ol {
+	text-align: center;
+}
+.nakladka ol li{}
+.nakladka ol li a{
+	text-decoration: none;
+	color: white;
+	font-size: 2.5em;
+	padding: 0.5em;
+	display: block;
+}
+.nakladka ol li a:hover{
+	background-color: white;
+	color: #222;
+	transition: 1s;
+
+}
+.zamknijX{
+	text-decoration: none;
+	color: white;
+	position: absolute;
+	font-size: 5em;
+	top: 0.1em;
+	right: 0.2em;
+}
+
+/* NAWIGACJA DESKTOPOWA */
+#top{
+	min-height: 40vh; 
+	/* display: block; */
+	/* align-items: center; */
+	/* justify-content: center; */
+	/* flex-direction: row; */
+	/* margin-top: 5%; */
+	max-width: 1200px;
+	height: 60vh;
+	/* margin-top: 100px; */
+	width: 100%; 
+	/* align-items: left; */
+	/* justify-content: center; */
+
+	outline: 5px solid #d6b68c;
+	outline-offset:-10px;
+}
+
+#top div{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#top div img{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	/* height: 40%; */
+	width: 50%
+}
+#top div ol{
+	width: 40%;
+	position: absolute;
+	left: 0;
+	top: 5%;
+	padding-left: 5%;
+	
+}
+#top ol hr{
+	/* margin-left: 10px; */
+	left: 0;
+	border: 0.1px solid #D4AF37;
+	width: 100%;
+}
+
+#top ol li p{
+	font-size:x-large;
+}
+
+#top ol li img{
+	width: 15%;
+}
+
+#top ol li{
+	/* height: 50%; */
+	text-align: left;
+	padding: 0.5em;
+	display: inline; /*domyślne wyświetalnie liniowe, żeby nie zaburzać ciagłości tekstu*/
+	display: block; /*teraz otoczenie reaguje na nie*/
+}
+
+#top ol li a{
+	/* color: white; */
+	text-decoration: none;
+	/* text-align: center; */
+	transition: 500ms; /*przepłynięcie płynne koloru hoveru miedzy menu*/
+}
+/* #top ol li a:hover{
+	background-color: white;
+	color: #222;
+} */
+
+/*SEKCJE*/
+#porady{
+	background-color: green;
+	min-height: 80vh;
+}
+
+#doniczki{
+	width: 40%;
+	padding-top: 10%; 
+}
+
+#lopata{
+   width: 60%;
+}
+
+#opis_wina{
+	min-height: 100vh;
+	width: 100%;
+}
+
+#opis_wina .content{
+	flex-wrap: wrap-reverse;
+}
+
+#opis_wina hr{
+	margin-top: 0;
+	border: 8px solid #D4AF37;
+	width: 80%;
+	margin-left: 0;
+}
+.wino{
+	width: 50%;
+}
+
+#piata{}
+
+/*STYLE RESPONSYWNE*/
+@media all and (max-width:800px){
+	body{font-size: 22px;}
+	#top{
+		display: none;
+	}
+	.content{
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	.content #left{
+		max-width: 100%;
+	}
+	.burger{display: block;} /*dzieki temu juz burgra nie ma na desktopowej wersji*/
+	#lopata{
+		display: none;
+	}
+
+	#opis_wina .content{
+		flex-direction: row;
+	}
+
+	.footer{
+		text-align: center;
+	}
+
+	.footer div{
+		width: 100%;
+	}
+}
+
+
+/* stopka */
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 100%;
+  }
+
+  .footer div{
+	  padding: 5%;
+	  /* width: auto; */
+  }
+  
